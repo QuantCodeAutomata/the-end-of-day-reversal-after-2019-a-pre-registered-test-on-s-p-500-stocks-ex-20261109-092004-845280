@@ -33,7 +33,7 @@ SP500_EXCLUDE_COUNT_PAPER = 80  # heavily traded names excluded from the primary
 # 5-minute history fits the time available for this replication; the
 # ~80-name exclusion is scaled proportionally (EXCLUDE_COUNT_RUN below).
 UNIVERSE_SIZE_PAPER = SP500_UNIVERSE_SIZE_PAPER  # full point-in-time S&P 500, Sec. 3.1
-UNIVERSE_SIZE_RUN = 60  # reduced universe actually downloaded (see results/RESULTS.md)
+UNIVERSE_SIZE_RUN = 20  # reduced universe actually downloaded for this run (see results/RESULTS.md)
 EXCLUDE_COUNT_RUN = round(
     SP500_EXCLUDE_COUNT_PAPER * UNIVERSE_SIZE_RUN / SP500_UNIVERSE_SIZE_PAPER
 )  # proportional scaling of the ~80-name exclusion to UNIVERSE_SIZE_RUN

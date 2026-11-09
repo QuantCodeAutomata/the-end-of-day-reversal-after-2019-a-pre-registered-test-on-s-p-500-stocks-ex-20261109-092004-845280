@@ -62,9 +62,17 @@ def build_filtered_panel(
     panel = reversal.add_prior_month_weight(panel)
     n_before_stock_filters = len(panel)
     panel = reversal.apply_stock_day_filters(panel)
+    n_after_stock_filters = len(panel)
 
     trading_days = pd.DatetimeIndex(sorted(panel["date"].unique()))
     membership_by_day = universe.membership_by_day(membership_table, trading_days)
+    # Coverage (Sec. 3.1, step 2) is the share of the sample's own universe with
+    # a usable bar on a session, so the point-in-time S&P 500 member set is
+    # restricted to the tickers actually downloaded for this run; otherwise a
+    # reduced run universe would always show near-zero coverage against the
+    # full ~500-member index and every session would be dropped.
+    run_set = set(tickers)
+    membership_by_day = {day: members & run_set for day, members in membership_by_day.items()}
     panel, session_info = reversal.apply_session_filters(panel, membership_by_day, start, end)
 
     info = {
@@ -77,7 +85,8 @@ def build_filtered_panel(
             },
         },
         "rows_before_stock_filters": n_before_stock_filters,
-        "rows_after_stock_filters": len(panel) + 0,  # updated below after session filters
+        "rows_after_stock_filters": n_after_stock_filters,
+        "rows_after_session_filters": len(panel),
         "session_filters": session_info,
         "sessions_total": panel["date"].nunique(),
         "tickers_total": panel["ticker"].nunique(),
