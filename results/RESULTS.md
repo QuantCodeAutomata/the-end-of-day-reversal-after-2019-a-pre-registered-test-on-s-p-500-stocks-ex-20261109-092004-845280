@@ -257,9 +257,8 @@ means feeding the simulated residual pool at the run universe size.
   dollar-volume weights are used throughout, as the paper's own weighting
   scheme already is.
 - **Leveraged-ETF launch table (experiment 4).** The issuer-sourced launch
-  date table referenced by the paper (Zenodo DOI) was not retrieved in this
-  environment; the leveraged-ETF mechanism test is not run (see "Not
-  reproduced").
+  date table referenced by the paper (Zenodo DOI) is not available here;
+  the leveraged-ETF mechanism test is not run (see "Not reproduced").
 - **Pre-registration timestamps and lock file.** The paper's registered-script
   lock and hash check over a private version-control history cannot be
   verified from outside and are not reproduced; this implementation runs the

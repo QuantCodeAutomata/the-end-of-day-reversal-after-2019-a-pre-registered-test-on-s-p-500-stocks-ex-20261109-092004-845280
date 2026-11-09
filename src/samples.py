@@ -26,8 +26,8 @@ def static_heavy_traded_list(
 ) -> list[str]:
     """Fixed list of the ``exclude_count`` most heavily traded tickers (Sec. 3.1, step 1).
 
-    The paper's own ~80-name exclusion list is unpublished (Sec. 3.1,
-    uncertainties); this replication substitutes the most liquid names of the
+    The paper's own ~80-name exclusion list is unpublished (Sec. 3.1);
+    this replication substitutes the most liquid names of the
     reduced run universe by mean prior-month dollar volume over period E, a
     fixed list applied for the whole 2016-2026 sample, matching the paper's
     description that the exclusion is by company, not a recomputed daily cut.

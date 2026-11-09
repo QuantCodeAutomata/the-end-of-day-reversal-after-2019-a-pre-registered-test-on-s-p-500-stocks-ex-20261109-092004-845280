@@ -25,9 +25,9 @@ SP500_MEMBERSHIP_URL = (
 SP500_UNIVERSE_SIZE_PAPER = 500  # approximate S&P 500 size, Sec. 3.1
 SP500_EXCLUDE_COUNT_PAPER = 80  # heavily traded names excluded from the primary sample, Sec. 3.1 / abstract
 
-# The paper's exact ~80-name exclusion list is not released (Sec. 3.1,
-# uncertainties), so the primary sample cannot be rebuilt outside the
-# authors' environment. This replication instead downloads a reduced,
+# The paper's exact ~80-name exclusion list is not released (Sec. 3.1), so
+# the primary sample cannot be rebuilt exactly from outside the authors'
+# own records. This replication instead downloads a reduced,
 # liquidity-ranked subset of point-in-time S&P 500 members (see
 # UNIVERSE_SIZE_RUN below) so that the full 2016-2026 daily, 30-minute and
 # 5-minute history fits the time available for this replication; the
