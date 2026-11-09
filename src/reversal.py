@@ -191,9 +191,14 @@ def daily_wls_slope(
         X = sm.add_constant(group[x_col].to_numpy())
         model = WLS(group[y_col].to_numpy(), X, weights=group[weight_col].to_numpy()).fit()
         rows.append({"date": date, "b": model.params[1], "se": model.bse[1], "n": len(group)})
-    return pd.DataFrame(rows).set_index("date").sort_index() if rows else pd.DataFrame(
-        columns=["b", "se", "n"]
-    )
+    if rows:
+        return pd.DataFrame(rows).set_index("date").sort_index()
+    # No date met min_obs (e.g. a diagnostic subsample too small for this run's
+    # reduced universe): keep an empty frame with a proper DatetimeIndex so
+    # downstream date-range comparisons (period_reversal) see an empty window
+    # rather than raising on a mismatched index dtype.
+    empty_index = pd.DatetimeIndex([], name="date")
+    return pd.DataFrame({"b": [], "se": [], "n": []}, index=empty_index)
 
 
 def daily_reversal_series(wls_result: pd.DataFrame) -> pd.Series:

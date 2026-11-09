@@ -1,0 +1,289 @@
+{
+  "universe_info": {
+    "sp500_members_at_ranking_date": 504,
+    "universe_size_run": 20,
+    "ranking_window": [
+      "2015-11-20",
+      "2016-01-04"
+    ],
+    "non_massive_source": {
+      "APTV": "yahoo",
+      "BKNG": "yahoo",
+      "CBRE": "yahoo",
+      "CCEP": "yahoo",
+      "CMCSA": "yahoo",
+      "CPRI": "yahoo",
+      "GOOGL": "yahoo",
+      "JEF": "yahoo",
+      "KDP": "yahoo",
+      "SCHW": "yahoo",
+      "SPGI": "yahoo",
+      "TPR": "yahoo",
+      "UAA": "yahoo",
+      "WELL": "yahoo"
+    },
+    "failed": {
+      "AABA": "AABA: no data available in the selected period from either Massive or Yahoo",
+      "ANDV": "ANDV: no data available in the selected period from either Massive or Yahoo",
+      "ARNC": "ARNC: no data available in the selected period from either Massive or Yahoo",
+      "BHGE": "BHGE: no data available in the selected period from either Massive or Yahoo",
+      "DISCA": "DISCA: no data available in the selected period from either Massive or Yahoo",
+      "DISCK": "DISCK: no data available in the selected period from either Massive or Yahoo",
+      "WYND": "WYND: no data available in the selected period from either Massive or Yahoo"
+    }
+  },
+  "panel_info": {
+    "load_meta": {
+      "daily": {
+        "GOOGL": "yahoo"
+      },
+      "thirty_min": {},
+      "five_min": {},
+      "failed": {
+        "daily": {},
+        "thirty_min": {},
+        "five_min": {
+          "GOOGL": "GOOGL: Massive has no ticker record in 2016-01-04..2016-07-01",
+          "AGN": "AGN: Massive has no ticker record in 2026-05-11..2026-10-30",
+          "FB": "FB: Massive has no ticker record in 2024-11-17..2025-05-15"
+        }
+      }
+    },
+    "rows_before_stock_filters": 49487,
+    "rows_after_stock_filters": 49086,
+    "rows_after_session_filters": 35852,
+    "session_filters": {
+      "early_closes_dropped": 21,
+      "low_coverage_sessions_dropped": 736,
+      "sessions_kept": 1944
+    },
+    "sessions_total": 1944,
+    "tickers_total": 19,
+    "date_range": [
+      "2016-11-23",
+      "2026-10-30"
+    ]
+  },
+  "dollar_volume_weighted": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": 5.662781822929365,
+        "t": 5.124410335918,
+        "n": 771
+      },
+      "T": {
+        "reversal_mean_bps": 9.258773450366977,
+        "t": 2.3334055006368137,
+        "n": 229
+      },
+      "L": {
+        "reversal_mean_bps": 6.6134421135983255,
+        "t": 4.820474904568354,
+        "n": 944
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": 7.129879348142246,
+      "t": 5.2692341337279265,
+      "n": 1173
+    },
+    "change_l_minus_e_bps": 0.9506602906689601,
+    "change_t": 0.5396429093858117
+  },
+  "equal_weighted": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": 5.96595820725341,
+        "t": 6.614122282491744,
+        "n": 771
+      },
+      "T": {
+        "reversal_mean_bps": 6.074757559351746,
+        "t": 2.2197944487300654,
+        "n": 229
+      },
+      "L": {
+        "reversal_mean_bps": 4.568543485253263,
+        "t": 4.3104919653754905,
+        "n": 944
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": 4.8625955082443575,
+      "t": 4.81458534192571,
+      "n": 1173
+    },
+    "change_l_minus_e_bps": -1.3974147220001463,
+    "change_t": -1.004081331182286
+  },
+  "sqrt_dollar_volume_weighted": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": 5.805600704410119,
+        "t": 5.994134919795258,
+        "n": 771
+      },
+      "T": {
+        "reversal_mean_bps": 7.460688631943759,
+        "t": 2.521224054195585,
+        "n": 229
+      },
+      "L": {
+        "reversal_mean_bps": 5.621194211670388,
+        "t": 4.729465715208198,
+        "n": 944
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": 5.980311195679425,
+      "t": 5.333141206399704,
+      "n": 1173
+    },
+    "change_l_minus_e_bps": -0.1844064927397312,
+    "change_t": -0.12027490352449172
+  },
+  "winsorized_lh": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": 5.55834619263625,
+        "t": 5.214797022631545,
+        "n": 771
+      },
+      "T": {
+        "reversal_mean_bps": 8.94078468324703,
+        "t": 2.3807898004103514,
+        "n": 229
+      },
+      "L": {
+        "reversal_mean_bps": 6.33413677264058,
+        "t": 4.774331888442115,
+        "n": 944
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": 6.843021999860423,
+      "t": 5.265229763438371,
+      "n": 1173
+    },
+    "change_l_minus_e_bps": 0.7757905800043294,
+    "change_t": 0.4558547890017958
+  },
+  "drop_top_5": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": 6.575780394303969,
+        "t": 6.6160526917072975,
+        "n": 771
+      },
+      "T": {
+        "reversal_mean_bps": 6.0326665478150945,
+        "t": 1.8308795430479714,
+        "n": 229
+      },
+      "L": {
+        "reversal_mean_bps": 3.4256052815996063,
+        "t": 3.124930416616023,
+        "n": 944
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": 3.9345712065470453,
+      "t": 3.586035187336412,
+      "n": 1173
+    },
+    "change_l_minus_e_bps": -3.1501751127043627,
+    "change_t": -2.1289063761769857
+  },
+  "drop_top_10": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      },
+      "T": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      },
+      "L": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": NaN,
+      "t": NaN,
+      "n": 0
+    },
+    "change_l_minus_e_bps": NaN,
+    "change_t": NaN
+  },
+  "drop_top_20": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      },
+      "T": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      },
+      "L": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": NaN,
+      "t": NaN,
+      "n": 0
+    },
+    "change_l_minus_e_bps": NaN,
+    "change_t": NaN
+  },
+  "among_largest_only": {
+    "period_stats_bps": {
+      "E": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      },
+      "T": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      },
+      "L": {
+        "reversal_mean_bps": NaN,
+        "t": NaN,
+        "n": 0
+      }
+    },
+    "all_later_sessions_bps": {
+      "reversal_mean_bps": NaN,
+      "t": NaN,
+      "n": 0
+    },
+    "change_l_minus_e_bps": NaN,
+    "change_t": NaN
+  },
+  "paired_proxy_minus_largest_bps": {
+    "mean_bps": NaN,
+    "t": NaN,
+    "n": 0
+  },
+  "effective_n": {
+    "E_mean": 9.490833154819027,
+    "L_mean": 8.171591720823002
+  },
+  "leave_one_out_L": {
+    "min_bps": 5.515503173383278,
+    "max_bps": 7.184464138028429,
+    "n_tickers": 18
+  }
+}

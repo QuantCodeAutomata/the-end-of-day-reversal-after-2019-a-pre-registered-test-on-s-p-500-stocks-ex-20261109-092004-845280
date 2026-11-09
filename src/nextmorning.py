@@ -44,9 +44,12 @@ def daily_next_morning_slope(
         X = sm.add_constant(group["q"].to_numpy())
         model = WLS(group["next_morning_return"].to_numpy(), X, weights=group[weight_col].to_numpy()).fit()
         rows.append({"date": date, "b": model.params[1], "se": model.bse[1], "n": len(group)})
-    return pd.DataFrame(rows).set_index("date").sort_index() if rows else pd.DataFrame(
-        columns=["b", "se", "n"]
-    )
+    if rows:
+        return pd.DataFrame(rows).set_index("date").sort_index()
+    # Mirrors the daily_wls_slope empty-fallback fix (src/reversal.py): keep a
+    # proper DatetimeIndex so date-range comparisons on an empty result do not
+    # raise, e.g. a diagnostic subsample too small for this run's universe.
+    return pd.DataFrame({"b": [], "se": [], "n": []}, index=pd.DatetimeIndex([], name="date"))
 
 
 def kappa(
@@ -71,6 +74,8 @@ def kappa_interval(
     point = kappa(aligned["b_close"].mean(), aligned["b_next"].mean())
     rng = np.random.default_rng(seed)
     n = len(aligned)
+    if n == 0:
+        return {"kappa": point, "lower": np.nan, "upper": np.nan, "n": 0}
     block = config.CHANGEPOINT_BLOCK_DAYS
     draws = []
     for _ in range(n_boot):

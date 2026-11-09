@@ -1,0 +1,227 @@
+{
+  "universe_info": {
+    "sp500_members_at_ranking_date": 504,
+    "universe_size_run": 20,
+    "ranking_window": [
+      "2015-11-20",
+      "2016-01-04"
+    ],
+    "non_massive_source": {
+      "APTV": "yahoo",
+      "BKNG": "yahoo",
+      "CBRE": "yahoo",
+      "CCEP": "yahoo",
+      "CMCSA": "yahoo",
+      "CPRI": "yahoo",
+      "GOOGL": "yahoo",
+      "JEF": "yahoo",
+      "KDP": "yahoo",
+      "SCHW": "yahoo",
+      "SPGI": "yahoo",
+      "TPR": "yahoo",
+      "UAA": "yahoo",
+      "WELL": "yahoo"
+    },
+    "failed": {
+      "AABA": "AABA: no data available in the selected period from either Massive or Yahoo",
+      "ANDV": "ANDV: no data available in the selected period from either Massive or Yahoo",
+      "ARNC": "ARNC: no data available in the selected period from either Massive or Yahoo",
+      "BHGE": "BHGE: no data available in the selected period from either Massive or Yahoo",
+      "DISCA": "DISCA: no data available in the selected period from either Massive or Yahoo",
+      "DISCK": "DISCK: no data available in the selected period from either Massive or Yahoo",
+      "WYND": "WYND: no data available in the selected period from either Massive or Yahoo"
+    }
+  },
+  "panel_info": {
+    "load_meta": {
+      "daily": {
+        "GOOGL": "yahoo"
+      },
+      "thirty_min": {},
+      "five_min": {},
+      "failed": {
+        "daily": {},
+        "thirty_min": {},
+        "five_min": {
+          "GOOGL": "GOOGL: Massive has no ticker record in 2016-01-04..2016-07-01",
+          "AGN": "AGN: Massive has no ticker record in 2026-05-11..2026-10-30",
+          "FB": "FB: Massive has no ticker record in 2024-11-17..2025-05-15"
+        }
+      }
+    },
+    "rows_before_stock_filters": 49487,
+    "rows_after_stock_filters": 49086,
+    "rows_after_session_filters": 35852,
+    "session_filters": {
+      "early_closes_dropped": 21,
+      "low_coverage_sessions_dropped": 736,
+      "sessions_kept": 1944
+    },
+    "sessions_total": 1944,
+    "tickers_total": 19,
+    "date_range": [
+      "2016-11-23",
+      "2026-10-30"
+    ]
+  },
+  "samples": {
+    "primary": {
+      "E": {
+        "kappa": -1.8217383978808528,
+        "kappa_lower": -3.145869690301436,
+        "kappa_upper": -1.001346368350715,
+        "combined_reversal_bps": -5.044024742186228,
+        "combined_t": -1.479653565803254,
+        "n": 771
+      },
+      "L": {
+        "kappa": -0.9015921287014695,
+        "kappa_lower": -3.160175400692015,
+        "kappa_upper": 0.8678809096575791,
+        "combined_reversal_bps": 0.4563104954843184,
+        "combined_t": 0.09174727939382835,
+        "n": 943
+      }
+    },
+    "proxy": {
+      "E": {
+        "kappa": -0.8051720876874581,
+        "kappa_lower": -1.4570608351035057,
+        "kappa_upper": -0.1909500791602495,
+        "combined_reversal_bps": 1.5245456812614495,
+        "combined_t": 0.5125527387053721,
+        "n": 771
+      },
+      "L": {
+        "kappa": -1.0860439291169937,
+        "kappa_lower": -3.963364491387367,
+        "kappa_upper": 1.1242594778626382,
+        "combined_reversal_bps": -0.3577061662123277,
+        "combined_t": -0.06917436409267619,
+        "n": 943
+      }
+    },
+    "full_index": {
+      "E": {
+        "kappa": -2.233565763043362,
+        "kappa_lower": -3.7480465325949917,
+        "kappa_upper": -1.3424572279775417,
+        "combined_reversal_bps": -6.985413780349944,
+        "combined_t": -1.9804973598896698,
+        "n": 771
+      },
+      "L": {
+        "kappa": -1.5326653164159352,
+        "kappa_lower": -2.8601601694163548,
+        "kappa_upper": -0.644732974821297,
+        "combined_reversal_bps": -3.499184799215144,
+        "combined_t": -0.8594089860016354,
+        "n": 943
+      }
+    },
+    "among_80_largest": {
+      "E": {
+        "kappa": NaN,
+        "kappa_lower": NaN,
+        "kappa_upper": NaN,
+        "combined_reversal_bps": NaN,
+        "combined_t": NaN,
+        "n": 0
+      },
+      "L": {
+        "kappa": NaN,
+        "kappa_lower": NaN,
+        "kappa_upper": NaN,
+        "combined_reversal_bps": NaN,
+        "combined_t": NaN,
+        "n": 0
+      }
+    }
+  },
+  "full_index_robustness": {
+    "winsorized_lh": {
+      "E": {
+        "kappa": -2.275532175386225,
+        "kappa_lower": -3.8133524698311905,
+        "kappa_upper": -1.3736658125917625,
+        "combined_reversal_bps": -7.089849410643058,
+        "combined_t": -2.0100821132611655,
+        "n": 771
+      },
+      "L": {
+        "kappa": -1.6007131042504608,
+        "kappa_lower": -2.990247377439931,
+        "kappa_upper": -0.6756246312817578,
+        "combined_reversal_bps": -3.778447523709488,
+        "combined_t": -0.9291986211478126,
+        "n": 943
+      }
+    },
+    "sqrt_weights": {
+      "E": {
+        "kappa": -1.7689661440877569,
+        "kappa_lower": -2.8113789222035104,
+        "kappa_upper": -1.0081223802881638,
+        "combined_reversal_bps": -4.464310387783415,
+        "combined_t": -1.4540577708868925,
+        "n": 771
+      },
+      "L": {
+        "kappa": -1.3316637048162392,
+        "kappa_lower": -2.516016641637044,
+        "kappa_upper": -0.33975316080979334,
+        "combined_reversal_bps": -1.8509597584591182,
+        "combined_t": -0.5223699586691187,
+        "n": 943
+      }
+    },
+    "equal_weights": {
+      "E": {
+        "kappa": -1.3031471411337507,
+        "kappa_lower": -2.0760698690129464,
+        "kappa_upper": -0.6470843934842544,
+        "combined_reversal_bps": -1.8085631746523099,
+        "combined_t": -0.6712901789268108,
+        "n": 771
+      },
+      "L": {
+        "kappa": -1.1701798531730772,
+        "kappa_lower": -2.320569169026826,
+        "kappa_upper": 0.05491883014339357,
+        "combined_reversal_bps": -0.7702235940632214,
+        "combined_t": -0.2393695381610436,
+        "n": 943
+      }
+    },
+    "drop_5_largest": {
+      "E": {
+        "kappa": -0.9918902767318968,
+        "kappa_lower": -1.873959953014202,
+        "kappa_upper": -0.30383689789147317,
+        "combined_reversal_bps": 0.05332775926962472,
+        "combined_t": 0.01714764391188023,
+        "n": 771
+      },
+      "L": {
+        "kappa": -0.3447700887792329,
+        "kappa_lower": -2.186295317111407,
+        "kappa_upper": 2.3978107741321018,
+        "combined_reversal_bps": 2.2294620619515753,
+        "combined_t": 0.5534964837076201,
+        "n": 943
+      }
+    }
+  },
+  "bds_form_full_index": {
+    "E": {
+      "closing_coefficient": -0.018693366913272707,
+      "next_morning_coefficient": 0.03995757085434133,
+      "kappa": -2.1375266980915337
+    },
+    "L": {
+      "closing_coefficient": -0.01372607461047293,
+      "next_morning_coefficient": 0.02411728938213755,
+      "kappa": -1.7570419851671337
+    }
+  }
+}

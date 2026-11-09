@@ -1,0 +1,93 @@
+{
+  "universe_info": {
+    "sp500_members_at_ranking_date": 504,
+    "universe_size_run": 20,
+    "ranking_window": [
+      "2015-11-20",
+      "2016-01-04"
+    ],
+    "non_massive_source": {
+      "APTV": "yahoo",
+      "BKNG": "yahoo",
+      "CBRE": "yahoo",
+      "CCEP": "yahoo",
+      "CMCSA": "yahoo",
+      "CPRI": "yahoo",
+      "GOOGL": "yahoo",
+      "JEF": "yahoo",
+      "KDP": "yahoo",
+      "SCHW": "yahoo",
+      "SPGI": "yahoo",
+      "TPR": "yahoo",
+      "UAA": "yahoo",
+      "WELL": "yahoo"
+    },
+    "failed": {
+      "AABA": "AABA: no data available in the selected period from either Massive or Yahoo",
+      "ANDV": "ANDV: no data available in the selected period from either Massive or Yahoo",
+      "ARNC": "ARNC: no data available in the selected period from either Massive or Yahoo",
+      "BHGE": "BHGE: no data available in the selected period from either Massive or Yahoo",
+      "DISCA": "DISCA: no data available in the selected period from either Massive or Yahoo",
+      "DISCK": "DISCK: no data available in the selected period from either Massive or Yahoo",
+      "WYND": "WYND: no data available in the selected period from either Massive or Yahoo"
+    }
+  },
+  "panel_info": {
+    "load_meta": {
+      "daily": {
+        "GOOGL": "yahoo"
+      },
+      "thirty_min": {},
+      "five_min": {},
+      "failed": {
+        "daily": {},
+        "thirty_min": {},
+        "five_min": {
+          "GOOGL": "GOOGL: Massive has no ticker record in 2016-01-04..2016-07-01",
+          "AGN": "AGN: Massive has no ticker record in 2026-05-11..2026-10-30",
+          "FB": "FB: Massive has no ticker record in 2024-11-17..2025-05-15"
+        }
+      }
+    },
+    "rows_before_stock_filters": 49487,
+    "rows_after_stock_filters": 49086,
+    "rows_after_session_filters": 35852,
+    "session_filters": {
+      "early_closes_dropped": 21,
+      "low_coverage_sessions_dropped": 736,
+      "sessions_kept": 1944
+    },
+    "sessions_total": 1944,
+    "tickers_total": 19,
+    "date_range": [
+      "2016-11-23",
+      "2026-10-30"
+    ]
+  },
+  "n_sessions_proxy": 1944,
+  "period_stats_bps": {
+    "E": {
+      "reversal_mean_bps": 7.8250886290655295,
+      "t": 7.692600767921387,
+      "n": 771
+    },
+    "T": {
+      "reversal_mean_bps": 7.173878755561322,
+      "t": 1.9349686835518145,
+      "n": 229
+    },
+    "L": {
+      "reversal_mean_bps": 4.200946778853095,
+      "t": 3.181618389413133,
+      "n": 944
+    }
+  },
+  "all_later_sessions_bps": {
+    "reversal_mean_bps": 4.781340148559986,
+    "t": 3.7052133222459465,
+    "n": 1173
+  },
+  "change_l_minus_e_bps": -3.624141850212435,
+  "change_t": -2.1743407114989446,
+  "note": "exploratory, not part of the pre-registered confirmatory evidence (Sec. 3.1)"
+}
