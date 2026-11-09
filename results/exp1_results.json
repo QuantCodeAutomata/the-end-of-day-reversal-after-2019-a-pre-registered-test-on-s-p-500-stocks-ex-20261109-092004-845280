@@ -1,0 +1,135 @@
+{
+  "universe_info": {
+    "sp500_members_at_ranking_date": 504,
+    "universe_size_run": 20,
+    "ranking_window": [
+      "2015-11-20",
+      "2016-01-04"
+    ],
+    "non_massive_source": {
+      "APTV": "yahoo",
+      "BKNG": "yahoo",
+      "CBRE": "yahoo",
+      "CCEP": "yahoo",
+      "CMCSA": "yahoo",
+      "CPRI": "yahoo",
+      "GOOGL": "yahoo",
+      "JEF": "yahoo",
+      "KDP": "yahoo",
+      "SCHW": "yahoo",
+      "SPGI": "yahoo",
+      "TPR": "yahoo",
+      "UAA": "yahoo",
+      "WELL": "yahoo"
+    },
+    "failed": {
+      "AABA": "AABA: no data available in the selected period from either Massive or Yahoo",
+      "ANDV": "ANDV: no data available in the selected period from either Massive or Yahoo",
+      "ARNC": "ARNC: no data available in the selected period from either Massive or Yahoo",
+      "BHGE": "BHGE: no data available in the selected period from either Massive or Yahoo",
+      "DISCA": "DISCA: no data available in the selected period from either Massive or Yahoo",
+      "DISCK": "DISCK: no data available in the selected period from either Massive or Yahoo",
+      "WYND": "WYND: no data available in the selected period from either Massive or Yahoo"
+    }
+  },
+  "panel_info": {
+    "load_meta": {
+      "daily": {
+        "GOOGL": "yahoo"
+      },
+      "thirty_min": {},
+      "five_min": {},
+      "failed": {
+        "daily": {},
+        "thirty_min": {},
+        "five_min": {
+          "GOOGL": "GOOGL: Massive has no ticker record in 2016-01-04..2016-07-01",
+          "AGN": "AGN: Massive has no ticker record in 2026-05-11..2026-10-30",
+          "FB": "FB: Massive has no ticker record in 2024-11-17..2025-05-15"
+        }
+      }
+    },
+    "rows_before_stock_filters": 49487,
+    "rows_after_stock_filters": 49086,
+    "rows_after_session_filters": 35852,
+    "session_filters": {
+      "early_closes_dropped": 21,
+      "low_coverage_sessions_dropped": 736,
+      "sessions_kept": 1944
+    },
+    "sessions_total": 1944,
+    "tickers_total": 19,
+    "date_range": [
+      "2016-11-23",
+      "2026-10-30"
+    ]
+  },
+  "excluded_tickers": [
+    "AMZN",
+    "AAPL",
+    "MSFT"
+  ],
+  "run_universe": [
+    "AAPL",
+    "AMZN",
+    "FB",
+    "MSFT",
+    "GE",
+    "NFLX",
+    "GOOGL",
+    "GOOG",
+    "PFE",
+    "BAC",
+    "XOM",
+    "AGN",
+    "DIS",
+    "CMG",
+    "CVX",
+    "KMI",
+    "JPM",
+    "GILD",
+    "C",
+    "WFC"
+  ],
+  "n_sessions_primary": 1944,
+  "reproduction_test_passed": true,
+  "period_stats_bps": {
+    "E": {
+      "reversal_mean_bps": 6.138236639779825,
+      "t": 4.944397627930548,
+      "n": 771,
+      "quintile_spread_bps": 5.114982477730705,
+      "quintile_spread_t": 4.933187785384415
+    },
+    "T": {
+      "reversal_mean_bps": 7.173878755561322,
+      "t": 1.9349686835518145,
+      "n": 229,
+      "quintile_spread_bps": 5.604033323599806,
+      "quintile_spread_t": 1.7070561936189639
+    },
+    "L": {
+      "reversal_mean_bps": 4.683856601789918,
+      "t": 3.611635514152886,
+      "n": 944,
+      "quintile_spread_bps": 3.518787280170107,
+      "quintile_spread_t": 3.222290791724899
+    }
+  },
+  "all_later_sessions_bps": {
+    "reversal_mean_bps": 5.169973458749551,
+    "t": 4.058064729014814,
+    "n": 1173
+  },
+  "confirmatory": {
+    "change_l_minus_e_bps": -1.4543800379899077,
+    "change_t": -0.8101041855037676,
+    "one_sided_95_decline_bound_bps": 4.407385741775886,
+    "one_sided_95_decline_fraction_of_e": 0.7180214775711181,
+    "verdict": "no weakening",
+    "all_later_change_bps": -0.9682631810302736,
+    "all_later_change_t": -0.5443220445467754,
+    "all_later_decline_bound_bps": 3.89419870232139,
+    "all_later_decline_fraction_of_e": 0.6344165158254753
+  }
+}

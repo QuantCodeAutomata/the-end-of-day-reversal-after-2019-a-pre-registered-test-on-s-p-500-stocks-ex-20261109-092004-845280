@@ -16,7 +16,10 @@ from data import data_loader as dl
 from src import calendar_filters, config
 
 THIRTY_MIN_TIMES = [config.THIRTY_PM, config.THIRTY_THIRTY_PM]
-FIVE_MIN_TIMES = [config.CLOSE_TIME]
+# 15:30 is fetched in addition to the 15:55 close-anchor bar so that the
+# 30-minute bar's adjusted price at the same instant can rescale it (see the
+# split-adjustment note in load_stock_day_panel).
+FIVE_MIN_TIMES = [config.THIRTY_THIRTY_PM, config.CLOSE_TIME]
 
 
 def load_stock_day_panel(
@@ -61,12 +64,28 @@ def load_stock_day_panel(
     p1500 = p1500.rename(columns={"open": "p1500"})
     p1530 = thirty[thirty["time"] == config.THIRTY_THIRTY_PM][["ticker", "date", "open"]]
     p1530 = p1530.rename(columns={"open": "p1530"})
+    # The Dataloader's 5-minute timeframe does not carry forward-looking split
+    # adjustments the way its 1-day and 30-minute timeframes do: before a
+    # split the 5-minute close can sit on the pre-split price scale while the
+    # 30-minute bar at the same instant is already split-adjusted. The 5-minute
+    # bar at 15:30 is fetched purely as an anchor at the same instant as the
+    # (trusted) 30-minute 15:30 bar, giving a per stock-day rescale factor
+    # that is applied to the 15:55 close used for p1600m.
+    anchor_30 = thirty[thirty["time"] == config.THIRTY_THIRTY_PM][["ticker", "date", "open"]]
+    anchor_30 = anchor_30.rename(columns={"open": "anchor_30min"})
+    anchor_5 = five[five["time"] == config.THIRTY_THIRTY_PM][["ticker", "date", "open"]]
+    anchor_5 = anchor_5.rename(columns={"open": "anchor_5min"})
     p1600m = five[five["time"] == config.CLOSE_TIME][["ticker", "date", "close"]]
-    p1600m = p1600m.rename(columns={"close": "p1600m"})
+    p1600m = p1600m.rename(columns={"close": "p1600m_raw"})
+    p1600m = p1600m.merge(anchor_30, on=["ticker", "date"], how="inner")
+    p1600m = p1600m.merge(anchor_5, on=["ticker", "date"], how="inner")
+    p1600m = p1600m[p1600m["anchor_5min"] > 0]
+    p1600m["split_rescale_factor"] = p1600m["anchor_30min"] / p1600m["anchor_5min"]
+    p1600m["p1600m"] = p1600m["p1600m_raw"] * p1600m["split_rescale_factor"]
 
     panel = base.merge(p1500, on=["ticker", "date"], how="inner")
     panel = panel.merge(p1530, on=["ticker", "date"], how="inner")
-    panel = panel.merge(p1600m, on=["ticker", "date"], how="inner")
+    panel = panel.merge(p1600m[["ticker", "date", "p1600m", "split_rescale_factor"]], on=["ticker", "date"], how="inner")
     panel = panel.dropna(subset=["prior_close", "open", "p1500", "p1530", "p1600m"])
 
     panel["rod3"] = panel["p1500"] / panel["prior_close"] - 1.0  # Eq. 1
