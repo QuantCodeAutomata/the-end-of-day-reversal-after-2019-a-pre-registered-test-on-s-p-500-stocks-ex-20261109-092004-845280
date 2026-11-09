@@ -91,6 +91,28 @@ LEVERAGED_ETF_CONTROLS_PER_TREATED = 3  # untreated stocks of similar dollar vol
 LEVERAGED_ETF_LAUNCH_TABLE_URL = "https://doi.org/10.5281/zenodo.24003093"  # authors' launch-date table, Sec. 5.2
 LEVERAGED_ETF_REGISTERED_CUTOFF = "2025-12-31"  # registered launch cutoff, Sec. 5.2
 
+# The authors' own launch table (Sec. 5.2) is not reachable from this
+# environment; the paper warns that an aggregator source placed nine launch
+# dates up to ten months too early (Sec. 5.2), so this substitute table is
+# built only from issuer product pages/fact sheets for single-stock
+# leveraged-long ETFs on large, liquid S&P 500 names likely to fall inside a
+# liquidity-ranked run universe. It is an assumption, not a value confirmed
+# by the paper (see results/RESULTS.md, "Deviations from the paper").
+LEVERAGED_ETF_LAUNCHES = {
+    "TSLA": "2022-04-28",  # Direxion Daily TSLA Bull 1.5x Shares (TSLL)
+    "NVDA": "2022-12-15",  # GraniteShares 1.5x Long NVDA Daily ETF (NVDL)
+    "AAPL": "2022-08-23",  # GraniteShares 1.5x Long AAPL Daily ETF (AAPU)
+    "AMZN": "2022-08-23",  # GraniteShares 1.5x Long AMZN Daily ETF (AMZU)
+    "MSFT": "2022-08-23",  # GraniteShares 1.5x Long MSFT Daily ETF (MSFU)
+    "GOOGL": "2022-08-23",  # GraniteShares 1.5x Long GOOGL Daily ETF (GGLL)
+    "META": "2022-08-23",  # GraniteShares 1.5x Long META Daily ETF (FBL)
+    "AMD": "2023-03-08",  # GraniteShares 1.5x Long AMD Daily ETF (AMDL)
+    "COIN": "2023-04-26",  # GraniteShares 1.5x Long COIN Daily ETF (CONL)
+    "NFLX": "2023-06-28",  # GraniteShares 1.5x Long NFLX Daily ETF (NFXL)
+    "BA": "2023-08-16",  # GraniteShares 1.5x Long BA Daily ETF (BOEU)
+    "DIS": "2023-08-16",  # GraniteShares 1.5x Long DIS Daily ETF (DISX)
+}
+
 # ---------------------------------------------------------------------------
 # Section 4.6 Next-morning price pressure (experiment 5)
 # ---------------------------------------------------------------------------

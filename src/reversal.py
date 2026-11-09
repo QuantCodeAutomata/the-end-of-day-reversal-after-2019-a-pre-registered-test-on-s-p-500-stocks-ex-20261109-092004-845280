@@ -234,6 +234,23 @@ def quintile_spread_series(panel: pd.DataFrame, n_quintiles: int = config.QUINTI
     return pd.Series(rows).sort_index()
 
 
+def winsorize_column(
+    panel: pd.DataFrame, col: str, pct: float = config.WINSORIZE_PCT, out_col: str | None = None
+) -> pd.DataFrame:
+    """Cross-sectional winsorization of ``col`` at ``[pct, 1-pct]`` each day (Sec. 3.3/4.5).
+
+    Matches BDS's own convention (winsorizing at 1%/99%), used only in this
+    replication's descriptive robustness tables, never in the main rank
+    regression (Sec. 3.3, ``config.WINSORIZE = False``).
+    """
+    out = panel.copy()
+    out_col = out_col or col
+    out[out_col] = out.groupby("date")[col].transform(
+        lambda s: s.clip(s.quantile(pct), s.quantile(1 - pct))
+    )
+    return out
+
+
 def change_test(mean_e: float, se_e: float, mean_l: float, se_l: float) -> dict:
     """Delta = mean_L - mean_E with SE = sqrt(se_E^2 + se_L^2) (Sec. 3.4)."""
     delta = mean_l - mean_e
