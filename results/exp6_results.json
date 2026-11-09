@@ -1,0 +1,132 @@
+{
+  "universe_info": {
+    "sp500_members_at_ranking_date": 504,
+    "universe_size_run": 20,
+    "ranking_window": [
+      "2015-11-20",
+      "2016-01-04"
+    ],
+    "non_massive_source": {
+      "APTV": "yahoo",
+      "BKNG": "yahoo",
+      "CBRE": "yahoo",
+      "CCEP": "yahoo",
+      "CMCSA": "yahoo",
+      "CPRI": "yahoo",
+      "GOOGL": "yahoo",
+      "JEF": "yahoo",
+      "KDP": "yahoo",
+      "SCHW": "yahoo",
+      "SPGI": "yahoo",
+      "TPR": "yahoo",
+      "UAA": "yahoo",
+      "WELL": "yahoo"
+    },
+    "failed": {
+      "AABA": "AABA: no data available in the selected period from either Massive or Yahoo",
+      "ANDV": "ANDV: no data available in the selected period from either Massive or Yahoo",
+      "ARNC": "ARNC: no data available in the selected period from either Massive or Yahoo",
+      "BHGE": "BHGE: no data available in the selected period from either Massive or Yahoo",
+      "DISCA": "DISCA: no data available in the selected period from either Massive or Yahoo",
+      "DISCK": "DISCK: no data available in the selected period from either Massive or Yahoo",
+      "WYND": "WYND: no data available in the selected period from either Massive or Yahoo"
+    }
+  },
+  "panel_info": {
+    "load_meta": {
+      "daily": {
+        "GOOGL": "yahoo"
+      },
+      "thirty_min": {},
+      "five_min": {},
+      "failed": {
+        "daily": {},
+        "thirty_min": {},
+        "five_min": {
+          "GOOGL": "GOOGL: Massive has no ticker record in 2016-01-04..2016-07-01",
+          "AGN": "AGN: Massive has no ticker record in 2026-05-11..2026-10-30",
+          "FB": "FB: Massive has no ticker record in 2024-11-17..2025-05-15"
+        }
+      }
+    },
+    "rows_before_stock_filters": 49487,
+    "rows_after_stock_filters": 49086,
+    "rows_after_session_filters": 35852,
+    "session_filters": {
+      "early_closes_dropped": 21,
+      "low_coverage_sessions_dropped": 736,
+      "sessions_kept": 1944
+    },
+    "sessions_total": 1944,
+    "tickers_total": 19,
+    "date_range": [
+      "2016-11-23",
+      "2026-10-30"
+    ]
+  },
+  "samples": {
+    "primary": {
+      "sup_wald_test": {
+        "stat": 6.9182073801945725,
+        "p": 0.316,
+        "break_date": "2025-05-19",
+        "break_date_90pct_interval": [
+          "2018-02-23",
+          "2025-08-13"
+        ],
+        "detrended_stat": 5.460379921491499,
+        "detrended_p": 0.458,
+        "break_declared": false
+      },
+      "three_period_chi2_test": {
+        "stat": 0.8638596898520772,
+        "p": 0.6492549236146405,
+        "df": 2
+      }
+    },
+    "proxy": {
+      "sup_wald_test": {
+        "stat": 13.376945534992771,
+        "p": 0.053,
+        "break_date": "2025-05-19",
+        "break_date_90pct_interval": [
+          "2018-02-21",
+          "2025-08-11"
+        ],
+        "detrended_stat": 3.9228638039650465,
+        "detrended_p": 0.627,
+        "break_declared": false
+      },
+      "three_period_chi2_test": {
+        "stat": 4.763298916195083,
+        "p": 0.09239804504337613,
+        "df": 2
+      }
+    },
+    "full_index": {
+      "sup_wald_test": {
+        "stat": 3.95404199615485,
+        "p": 0.678,
+        "break_date": "2025-06-02",
+        "break_date_90pct_interval": [
+          "2018-02-20",
+          "2025-08-07"
+        ],
+        "detrended_stat": 3.937925682579769,
+        "detrended_p": 0.68,
+        "break_declared": false
+      },
+      "three_period_chi2_test": {
+        "stat": 0.9191657666005502,
+        "p": 0.6315470193827326,
+        "df": 2
+      }
+    }
+  },
+  "power_simulation": {
+    "reject_rate_5pct": 0.095,
+    "reject_rate_1pct": 0.0,
+    "full_rule_fire_rate": 0.0,
+    "n_draws": 200
+  }
+}

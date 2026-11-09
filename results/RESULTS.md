@@ -165,9 +165,65 @@ and comparable in L). The `among_80_largest` breakdown is not available
 
 ## Experiment 6 — Change-point test for a structural break
 
-Daily reversal series built from the primary sample (1,944 sessions,
-2016–2026). Results pending at the time this file was written; see
-`results/exp6_results.json` if present, or rerun `python -m exp.exp6`.
+Daily reversal series built from the primary, proxy and full-index samples
+(1,944 sessions each, 2016–2026; see `results/exp6_results.json` and
+`results/exp6_primary_reversal_series.csv`).
+
+| Sample | Sup-Wald stat | p (bootstrap) | Break date | 90% interval | Detrended p | Break declared |
+|---|---|---|---|---|---|---|
+| Primary | 6.92 | 0.316 | 2025-05-19 | [2018-02-23, 2025-08-13] | 0.458 | No |
+| Proxy | 13.38 | 0.053 | 2025-05-19 | [2018-02-21, 2025-08-11] | 0.627 | No |
+| Full index | 3.95 | 0.678 | 2025-06-02 | [2018-02-20, 2025-08-07] | 0.680 | No |
+
+| Sample | Three-period χ²(2) | p |
+|---|---|---|
+| Primary | 0.86 | 0.649 |
+| Proxy | 4.76 | 0.092 |
+| Full index | 0.92 | 0.632 |
+
+Power simulation (200 draws, residuals block-resampled from the primary
+series): sup-Wald rejects at 5% in 9.5% of draws, at 1% in 0.0%, and the full
+registered rule (p < 0.01, break date in 2020–2024, detrended p < 0.01) fires
+in 0.0% of draws.
+
+Paper: sup-Wald p = 0.72 on both the raw and detrended series, most likely
+break date April 2020, 90% interval November 2017 to December 2024; the
+pre-registered threshold (p < 0.01, date in 2020–2024, detrended also
+p < 0.01) is not met, so no break or gradual change is declared. Descriptive
+three-period test: χ²(2) = 7.90, p = 0.019 (primary), p = 0.005 (proxy),
+p = 0.026 (full index). Power simulation: sup-Wald rejects at 5% in 19% of
+draws, at 1% in 6%, full registered rule fires in <1%.
+
+**Verdict — sup-Wald no-break conclusion: reproduced.** On all three samples
+the bootstrap p-value stays far above 0.01 on both the raw and detrended
+series, so the pre-registered threshold is not met and no break is declared,
+matching the paper; the test's qualitative near-complete lack of power
+against a dip that reverses (Sec. 4.4) is confirmed by the power simulation.
+**Verdict — break date and interval: not reproduced.** The most likely break
+date found here (May–June 2025) falls outside the paper's own 90% interval
+(November 2017–December 2024) and does not match the paper's April 2020
+estimate; with a sup-Wald statistic this flat (p > 0.3 everywhere), the
+maximizing tau is highly sensitive to the exact daily reversal path, which at
+the 20-name run universe differs session-by-session from the paper's
+~500-name panel (see "Data and universe actually used"). The cause of the
+specific break-date shift was not isolated beyond this known universe-size
+effect.
+**Verdict — descriptive three-period χ² test: not reproduced.** The paper
+finds a significant difference across periods E/T/L on every sample
+(p ≤ 0.026); this run finds no significant difference on the primary and
+full-index samples (p = 0.65, p = 0.63) and only marginal significance on the
+proxy sample (p = 0.092). This test directly compares period means, so it is
+more sensitive to the period-E/period-L reversal levels than the sup-Wald
+test is; the smaller, differently-composed 20-name universe changes those
+period means enough to move this particular test's significance, consistent
+with the already-documented universe-size deviation, though no single
+component isolates the exact size of the effect.
+**Verdict — power simulation: partially reproduced.** Both runs show the
+sup-Wald test has low power against a dip that reverses and that the full
+registered rule almost never fires (paper <1%, here 0.0% over 200 draws);
+the 5%-level rejection rate found here (9.5%) is about half the paper's
+(19%), consistent with the shorter effective sample and different period
+means feeding the simulated residual pool at the run universe size.
 
 ## Deviations from the paper
 
